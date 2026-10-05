@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuietTube</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header><span class="mark" aria-hidden="true">Q</span><div><h1>QuietTube</h1><p>YouTube, with fewer interruptions.</p></div></header>
+  <p id="status" role="status">Loading settings…</p>
+  <form id="settings">
+    <label class="master"><span>Enable QuietTube</span><input type="checkbox" name="enabled" role="switch" disabled></label>
+    <fieldset disabled>
+      <label><span>Filter player ad data</span><input type="checkbox" name="filterPlayerResponses"></label>
+      <label><span>Skip remaining video ads</span><input type="checkbox" name="skipAds"></label>
+      <label><span>Hide sponsored ad cards</span><input type="checkbox" name="hideAdCards"></label>
+      <label><span>Block YouTube ad endpoints</span><input type="checkbox" name="blockAdRequests"></label>
+    </fieldset>
+  </form>
+  <dl><div><dt>Responses filtered</dt><dd id="responsesFiltered">—</dd></div><div><dt>Skip actions</dt><dd id="skipActions">—</dd></div><div><dt>Ad cards hidden</dt><dd id="adCardsHidden">—</dd></div></dl>
+  <p class="hint" id="hint">Counters cover this page since its last reload.</p>
+  <button id="reload" disabled>Reload YouTube</button>
+  <p id="error" role="alert" hidden></p>
+  <footer>Local prototype · No analytics</footer>
+  <script src="core.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

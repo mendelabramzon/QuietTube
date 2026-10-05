@@ -1,0 +1,13 @@
+{
+  "name": "quiettube-safari",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local macOS Safari YouTube ad-blocking prototype",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "check": "node scripts/check.mjs",
+    "package:safari": "bash scripts/package-safari.sh",
+    "build:safari": "bash scripts/build-safari.sh"
+  },
+  "engines": { "node": ">=20" }
+}

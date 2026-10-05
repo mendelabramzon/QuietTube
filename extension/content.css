@@ -1,0 +1,9 @@
+:root[data-quiettube-hide-ads="true"] ytd-ad-slot-renderer,
+:root[data-quiettube-hide-ads="true"] ytd-display-ad-renderer,
+:root[data-quiettube-hide-ads="true"] ytd-promoted-sparkles-web-renderer,
+:root[data-quiettube-hide-ads="true"] ytd-promoted-video-renderer,
+:root[data-quiettube-hide-ads="true"] ytd-in-feed-ad-layout-renderer,
+:root[data-quiettube-hide-ads="true"] ytm-promoted-sparkles-web-renderer,
+:root[data-quiettube-hide-ads="true"] .ytp-ad-overlay-container {
+  display: none !important;
+}

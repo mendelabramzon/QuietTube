@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "QuietTube",
+  "version": "0.1.0",
+  "description": "Filter YouTube player ads, skip remaining marked ads, and hide ad cards in Safari.",
+  "permissions": ["storage", "activeTab", "declarativeNetRequest"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://youtube.com/*",
+    "https://m.youtube.com/*",
+    "https://www.youtube-nocookie.com/*"
+  ],
+  "background": {
+    "scripts": ["core.js", "background.js"],
+    "persistent": false
+  },
+  "action": {
+    "default_title": "QuietTube",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://youtube.com/*", "https://m.youtube.com/*", "https://www.youtube-nocookie.com/embed/*"],
+      "js": ["core.js", "page.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.youtube.com/*", "https://youtube.com/*", "https://m.youtube.com/*", "https://www.youtube-nocookie.com/embed/*"],
+      "js": ["core.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "youtube_ads", "enabled": true, "path": "rules/youtube-ads.json" }]
+  },
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'" }
+}
